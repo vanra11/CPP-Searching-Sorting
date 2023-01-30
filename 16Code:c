@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	int mat[20][20],i,j,row,col;
+	
+	printf("Enter the row and column size of the matrix: ");
+	scanf("%d %d", &row, &col);
+	printf("Enter the elements for matrix:\n");
+	for (i=0;i<row;i++)
+		for (j=0;j<col;j++)
+		{
+			printf("Enter value for Mat[%d][%d]: ",i,j);
+			scanf("%d", &mat[i][j]);
+		}
+		
+	printf("\nThe  matrix is: \n");
+	for (i=0;i<row;i++)
+	{
+		for (j=0;j<col;j++)
+		{
+			printf("%d ",mat[i][j]);
+		}
+		printf("\n");	
+	}		
+	return 0;
+}
