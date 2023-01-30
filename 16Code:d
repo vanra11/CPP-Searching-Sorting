@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int stack[50], choice, n, top, x, i;
+
+void push();
+void pop();
+void peek();
+
+int main()
+{
+ 	top = -1;     // Initially there is no element in stack
+ 	printf("Enter the size of STACK : ");
+ 	scanf("%d",&n);
+	do
+ 	{
+ 		printf("\n1.PUSH\n2.POP\n3.PEEK\n4.EXIT\n");
+ 		printf("\nEnter the choice : ");
+ 		scanf("%d",&choice);
+ 		switch(choice)
+ 		{
+     		case 1:
+         		push();
+     			break;
+     		case 2:
+				pop();
+ 				break;
+     		case 3:
+				peek();
+ 				break;
+     		case 4:
+				exit(0);
+			default:
+				printf ("Invalid Choice\n");
+     	}
+ 	} while(choice!=4);
+ 	return 0;
+}
+
+void push()
+{
+    if (top==n-1)        
+	printf("\nSTACK OVERFLOW\n");    
+    else
+        {
+ 			printf("Enter a value to be pushed : ");
+ 			scanf("%d",&x);
+ 			top++;    // TOP is incremented after an element is pushed
+ 			stack[top]=x;   // The pushed element is kept at the TOP
+       }
+}
+void pop()
+{
+     if (top == -1)
+        printf("STACK UNDERFLOW\n");
+     else
+        {
+ 			printf("The popped element is %d\n",stack[top]);   
+ 			top--;     //  Decrement TOP after a pop
+        }
+}
+void peek()
+{
+    if (top == -1)
+		printf("Stack is Empty\n");
+    else
+	    printf("The TOP element of the stack is %d\n",stack[top]);
+}
